@@ -17,39 +17,25 @@
             min-height: 100vh;
             overflow: hidden;
         }
-        /* Затемнение */
-        .overlay {
-            display: none;
-            position: fixed;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(0,0,0,0.7);
-            z-index: 99;
-        }
+        .overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.7); z-index: 99; }
         .overlay.active { display: block; }
-        /* Rick Roll */
         .rickroll {
             display: none;
             position: fixed;
             top: 50%; left: 50%;
             transform: translate(-50%, -50%);
             z-index: 100;
+            text-align: center;
         }
         .rickroll.active { display: block; }
-        .rickroll-text {
-            color: white;
-            text-align: center;
-            font-size: 16px;
-            margin-top: 10px;
-        }
-        /* Окно */
+        .rickroll-text { color: white; font-size: 16px; margin-top: 10px; }
         .window {
             background: #c0c0c0;
             border: 2px solid;
             border-color: #ffffff #808080 #808080 #ffffff;
             box-shadow: 2px 2px 4px rgba(0,0,0,0.3);
             position: absolute;
-            top: 50%;
-            left: 50%;
+            top: 50%; left: 50%;
             transform: translate(-50%, -50%);
             width: 700px;
             max-width: 95vw;
@@ -101,22 +87,14 @@
         h1 { font-size: 14px; margin-bottom: 16px; color: #000080; }
         h2 { font-size: 11px; margin-bottom: 14px; color: #000080; }
         hr { border: none; border-top: 1px solid #808080; margin: 20px 0; }
-        .status-bar {
-            background: #c0c0c0;
-            border-top: 2px solid #808080;
-            padding: 6px 12px;
-            font-size: 9px;
-        }
+        .status-bar { background: #c0c0c0; border-top: 2px solid #808080; padding: 6px 12px; font-size: 9px; }
         .highlight { color: #000080; font-weight: bold; }
         .products { display: flex; gap: 20px; margin-top: 16px; flex-wrap: wrap; }
         .product-card {
             background: #d4d0c8;
             border: 2px solid;
             border-color: #ffffff #808080 #808080 #ffffff;
-            padding: 20px;
-            flex: 1;
-            min-width: 250px;
-            text-align: center;
+            padding: 20px; flex: 1; min-width: 250px; text-align: center;
         }
         @media (max-width: 600px) {
             .window { width: 95vw; }
@@ -130,7 +108,6 @@
     </style>
 </head>
 <body>
-    <!-- Окно -->
     <div class="window" id="mainWindow">
         <div class="title-bar">
             <span>Lumina Corporation</span>
@@ -160,15 +137,10 @@
         <div class="status-bar">Lumina Corporation © 2025-2026</div>
     </div>
 
-    <!-- Затемнение -->
     <div class="overlay" id="overlay"></div>
-
-    <!-- Rick Roll -->
     <div class="rickroll" id="rickroll">
-        <video id="rickVideo" width="640" height="360" autoplay loop>
-            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-        </video>
-        <div class="rickroll-text">Never Gonna Give You Up</div>
+        <iframe width="640" height="360" src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&loop=1&playlist=dQw4w9WgXcQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <div class="rickroll-text">Never Gonna Give You Up — Rick Astley</div>
     </div>
 
     <script>
@@ -179,13 +151,10 @@
             document.getElementById('mainWindow').style.display = 'none';
             document.getElementById('overlay').classList.add('active');
             document.getElementById('rickroll').classList.add('active');
-            document.getElementById('rickVideo').play();
         }
-        // Клик по затемнению перезапустит окно
         document.getElementById('overlay').addEventListener('click', function() {
             document.getElementById('overlay').classList.remove('active');
             document.getElementById('rickroll').classList.remove('active');
-            document.getElementById('rickVideo').pause();
             document.getElementById('mainWindow').style.display = 'block';
             closed = false;
         });
