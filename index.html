@@ -85,19 +85,18 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
+            text-decoration: none;
+            color: #000;
         }
         .btn:hover { background: #d0d0d0; }
-        .btn:active, .btn.active {
+        .btn:active {
             border-color: #808080 #ffffff #ffffff #808080;
             background: #a0a0a0;
         }
         .btn svg { width: 16px; height: 16px; }
         h1 { font-size: 13px; margin-bottom: 12px; color: #000080; }
         h2 { font-size: 10px; margin-bottom: 10px; color: #000080; }
-        ul { list-style: none; padding-left: 0; }
-        li { margin-bottom: 6px; display: flex; align-items: center; gap: 8px; }
-        li svg { width: 14px; height: 14px; flex-shrink: 0; }
-        .separator { border: none; border-top: 1px solid #808080; margin: 12px 0; }
+        hr { border: none; border-top: 1px solid #808080; margin: 12px 0; }
         .status-bar {
             background: #c0c0c0;
             border-top: 2px solid #808080;
@@ -106,6 +105,19 @@
         }
         .highlight { color: #000080; font-weight: bold; }
         .cursor-blink { animation: blink 1s step-end infinite; }
+        .products {
+            display: flex;
+            gap: 16px;
+            margin-top: 8px;
+        }
+        .product-card {
+            background: #d4d0c8;
+            border: 2px solid;
+            border-color: #ffffff #808080 #808080 #ffffff;
+            padding: 16px;
+            flex: 1;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -128,70 +140,44 @@
                 </div>
             </div>
             <div class="content">
-                <h1>Добро пожаловать в Lumina Corporation</h1>
-                <p>Мы создаём <span class="highlight">Lumina OS</span> — лёгкую, быструю и безопасную операционную систему нового поколения.</p>
-                <hr class="separator">
-                <button class="btn">
-                    <svg viewBox="0 0 16 16"><circle cx="8" cy="8" r="6" fill="none" stroke="black" stroke-width="1.5"/><rect x="5" y="5" width="6" height="6" fill="black"/></svg>
-                    Скачать Lumina OS
-                </button>
-                <button class="btn">
-                    <svg viewBox="0 0 16 16"><rect x="2" y="2" width="12" height="12" rx="1" fill="none" stroke="black" stroke-width="1.5"/><circle cx="8" cy="8" r="3" fill="black"/></svg>
-                    О системе
-                </button>
-                <button class="btn">
-                    <svg viewBox="0 0 16 16"><rect x="2" y="3" width="12" height="9" rx="1" fill="none" stroke="black" stroke-width="1.5"/><rect x="4" y="5" width="8" height="5" fill="black"/><circle cx="8" cy="8" r="1" fill="white"/></svg>
-                    Контакты
-                </button>
-            </div>
-            <div class="status-bar">Готово <span class="cursor-blink">█</span> | Lumina Corporation © 2025</div>
-        </div>
-
-        <!-- О системе -->
-        <div class="window">
-            <div class="title-bar">
-                <div class="title-bar-title">
-                    <svg viewBox="0 0 20 20"><rect x="3" y="3" width="14" height="14" rx="2" fill="none" stroke="white" stroke-width="1.5"/><rect x="7" y="7" width="6" height="6" fill="white"/><line x1="3" y1="13" x2="17" y2="13" stroke="white" stroke-width="1.5"/></svg>
-                    О Lumina OS
-                </div>
-                <div class="title-bar-buttons">
-                    <span class="title-btn">_</span>
-                    <span class="title-btn">□</span>
-                    <span class="title-btn">✕</span>
-                </div>
-            </div>
-            <div class="content">
-                <h2>Что такое Lumina OS?</h2>
-                <ul>
-                    <li><svg viewBox="0 0 14 14"><polyline points="2,7 5,11 12,3" fill="none" stroke="black" stroke-width="2"/></svg>Современная ОС на базе Linux</li>
-                    <li><svg viewBox="0 0 14 14"><polyline points="2,7 5,11 12,3" fill="none" stroke="black" stroke-width="2"/></svg>Собственный браузер Lumina Browser</li>
-                    <li><svg viewBox="0 0 14 14"><polyline points="2,7 5,11 12,3" fill="none" stroke="black" stroke-width="2"/></svg>Умный обход блокировок</li>
-                    <li><svg viewBox="0 0 14 14"><polyline points="2,7 5,11 12,3" fill="none" stroke="black" stroke-width="2"/></svg>Дизайн Liquid Glass</li>
-                    <li><svg viewBox="0 0 14 14"><polyline points="2,7 5,11 12,3" fill="none" stroke="black" stroke-width="2"/></svg>Работает на Pentium 4 с 512 МБ ОЗУ</li>
-                    <li><svg viewBox="0 0 14 14"><polyline points="2,7 5,11 12,3" fill="none" stroke="black" stroke-width="2"/></svg>Полностью на русском языке</li>
-                </ul>
-            </div>
-            <div class="status-bar">Системные требования: Pentium 4, 512MB RAM, 10GB HDD</div>
-        </div>
-
-        <!-- Установка -->
-        <div class="window">
-            <div class="title-bar">
-                <div class="title-bar-title">
-                    <svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="7" fill="none" stroke="white" stroke-width="1.5"/><circle cx="10" cy="10" r="2" fill="white"/><line x1="10" y1="3" x2="10" y2="5" stroke="white" stroke-width="1.5"/></svg>
-                    Установка
-                </div>
-                <div class="title-bar-buttons">
-                    <span class="title-btn">_</span>
-                    <span class="title-btn">□</span>
-                    <span class="title-btn">✕</span>
+                <h1>Lumina Corporation</h1>
+                <p><span class="highlight">Основана в марте 2026 года.</span></p>
+                <p>Мы создаём программное обеспечение, которое работает на любом железе — от Pentium 4 до современных систем.</p>
+                <p>Наши продукты: <span class="highlight">Lumina OS</span> и <span class="highlight">Lumina Messenger</span>.</p>
+                <hr>
+                <h2>Наши продукты</h2>
+                <div class="products">
+                    <div class="product-card">
+                        <svg viewBox="0 0 48 48" width="48" height="48">
+                            <rect x="8" y="8" width="32" height="32" rx="4" fill="none" stroke="black" stroke-width="2"/>
+                            <rect x="14" y="14" width="20" height="6" fill="#000080"/>
+                            <rect x="14" y="24" width="8" height="10" fill="#000080"/>
+                            <circle cx="30" cy="29" r="5" fill="none" stroke="#000080" stroke-width="2"/>
+                        </svg>
+                        <h2>Lumina OS</h2>
+                        <p>Лёгкая и быстрая ОС</p>
+                        <a href="os.html" class="btn">
+                            <svg viewBox="0 0 16 16"><rect x="2" y="2" width="12" height="12" rx="1" fill="none" stroke="black" stroke-width="1.5"/><circle cx="8" cy="8" r="3" fill="black"/></svg>
+                            Подробнее
+                        </a>
+                    </div>
+                    <div class="product-card">
+                        <svg viewBox="0 0 48 48" width="48" height="48">
+                            <rect x="6" y="8" width="36" height="28" rx="3" fill="none" stroke="black" stroke-width="2"/>
+                            <circle cx="18" cy="22" r="4" fill="#000080"/>
+                            <circle cx="30" cy="22" r="4" fill="#000080"/>
+                            <rect x="14" y="30" width="20" height="3" rx="1" fill="black"/>
+                        </svg>
+                        <h2>Lumina Messenger</h2>
+                        <p>Быстрый мессенджер</p>
+                        <a href="https://project-pha93.vercel.app/" class="btn">
+                            <svg viewBox="0 0 16 16"><rect x="2" y="3" width="12" height="9" rx="1" fill="none" stroke="black" stroke-width="1.5"/><rect x="4" y="5" width="8" height="5" fill="black"/><circle cx="8" cy="8" r="1" fill="white"/></svg>
+                            Открыть
+                        </a>
+                    </div>
                 </div>
             </div>
-            <div class="content">
-                <p>ISO-образ Lumina OS 1.0 готовится к выпуску.</p>
-                <p>Следите за обновлениями! <span class="cursor-blink">█</span></p>
-            </div>
-            <div class="status-bar">Версия: 1.0 | Статус: в разработке</div>
+            <div class="status-bar">Готово <span class="cursor-blink">█</span> | Lumina Corporation © 2025-2026</div>
         </div>
     </div>
 </body>
