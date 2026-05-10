@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Lumina Corporation</title>
+    <style>
+        body {
+            background-color: #008080;
+            margin: 0;
+            padding: 0;
+            font-family: "Microsoft Sans Serif", "MS Sans Serif", Arial, sans-serif;
+            font-size: 12px;
+            color: #000;
+        }
+        .window {
+            background: #c0c0c0;
+            border: 2px solid;
+            border-color: #ffffff #808080 #808080 #ffffff;
+            margin: 20px;
+            padding: 2px;
+        }
+        .title-bar {
+            background: #000080;
+            color: white;
+            padding: 3px 6px;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .content {
+            padding: 16px;
+        }
+        .btn {
+            background: #c0c0c0;
+            border: 2px solid;
+            border-color: #ffffff #808080 #808080 #ffffff;
+            padding: 6px 20px;
+            font-family: inherit;
+            cursor: pointer;
+            font-size: 12px;
+        }
+        .btn:active {
+            border-color: #808080 #ffffff #ffffff #808080;
+        }
+        h1 { font-size: 16px; color: #000080; }
+        a { color: #000080; }
+    </style>
+</head>
+<body>
+    <div class="window">
+        <div class="title-bar">
+            <span>Lumina Corporation</span>
+            <span>✕</span>
+        </div>
+        <div class="content">
+            <h1>Lumina Corporation</h1>
+            <p>Добро пожаловать на официальный сайт Lumina Corporation.</p>
+            <p>Мы создаём Lumina OS — лёгкую и быструю операционную систему на базе Linux.</p>
+            <button class="btn">Скачать Lumina OS</button>
+            <button class="btn">О системе</button>
+        </div>
+    </div>
+    <div class="window">
+        <div class="title-bar">
+            <span>О Lumina OS</span>
+            <span>✕</span>
+        </div>
+        <div class="content">
+            <p>Lumina OS — это операционная система с уникальным дизайном и умным обходом блокировок.</p>
+            <p>Требования: Pentium 4, 512 МБ ОЗУ, 10 ГБ на диске.</p>
+        </div>
+    </div>
+    <div class="window">
+        <div class="title-bar">
+            <span>Контакты</span>
+            <span>✕</span>
+        </div>
+        <div class="content">
+            <p>© 2026 Lumina Corporation. Все права защищены.</p>
+        </div>
+    </div>
+</body>
+</html>
