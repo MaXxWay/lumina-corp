@@ -7,16 +7,16 @@
         body {
             background-color: #008080;
             margin: 0;
-            padding: 0;
-            font-family: "Microsoft Sans Serif", "MS Sans Serif", Arial, sans-serif;
-            font-size: 12px;
+            padding: 20px;
+            font-family: "Microsoft Sans Serif", "MS Sans Serif", sans-serif;
+            font-size: 13px;
             color: #000;
         }
         .window {
             background: #c0c0c0;
             border: 2px solid;
             border-color: #ffffff #808080 #808080 #ffffff;
-            margin: 20px;
+            margin-bottom: 16px;
             padding: 2px;
         }
         .title-bar {
@@ -24,61 +24,68 @@
             color: white;
             padding: 3px 6px;
             font-weight: bold;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            font-size: 13px;
         }
         .content {
-            padding: 16px;
+            padding: 12px 16px;
         }
         .btn {
             background: #c0c0c0;
             border: 2px solid;
             border-color: #ffffff #808080 #808080 #ffffff;
-            padding: 6px 20px;
+            padding: 6px 18px;
             font-family: inherit;
-            cursor: pointer;
             font-size: 12px;
+            cursor: pointer;
+            margin-right: 8px;
         }
         .btn:active {
             border-color: #808080 #ffffff #ffffff #808080;
         }
-        h1 { font-size: 16px; color: #000080; }
-        a { color: #000080; }
+        h1 {
+            font-size: 16px;
+            color: #000;
+            margin: 0 0 8px 0;
+        }
+        a {
+            color: #000080;
+        }
+        .footer {
+            text-align: center;
+            color: #404040;
+            margin-top: 20px;
+            font-size: 11px;
+        }
     </style>
 </head>
 <body>
     <div class="window">
-        <div class="title-bar">
-            <span>Lumina Corporation</span>
-            <span>✕</span>
-        </div>
+        <div class="title-bar">Lumina Corporation</div>
         <div class="content">
-            <h1>Lumina Corporation</h1>
-            <p>Добро пожаловать на официальный сайт Lumina Corporation.</p>
-            <p>Мы создаём Lumina OS — лёгкую и быструю операционную систему на базе Linux.</p>
+            <h1>Добро пожаловать в Lumina Corporation</h1>
+            <p>Мы создаём Lumina OS — лёгкую, быструю и безопасную операционную систему.</p>
             <button class="btn">Скачать Lumina OS</button>
             <button class="btn">О системе</button>
+            <button class="btn">Контакты</button>
         </div>
     </div>
     <div class="window">
-        <div class="title-bar">
-            <span>О Lumina OS</span>
-            <span>✕</span>
-        </div>
+        <div class="title-bar">О Lumina OS</div>
         <div class="content">
-            <p>Lumina OS — это операционная система с уникальным дизайном и умным обходом блокировок.</p>
+            <p>Lumina OS — это современная ОС на базе Linux с уникальным дизайном Liquid Glass.</p>
+            <p>• Собственный браузер Lumina Browser</p>
+            <p>• Умный обход блокировок</p>
+            <p>• Работает даже на Pentium 4 с 512 МБ ОЗУ</p>
+            <p>• Полностью на русском языке</p>
+        </div>
+    </div>
+    <div class="window">
+        <div class="title-bar">Скачать</div>
+        <div class="content">
+            <p>ISO-образ Lumina OS 1.0 будет доступен для скачивания.</p>
             <p>Требования: Pentium 4, 512 МБ ОЗУ, 10 ГБ на диске.</p>
         </div>
     </div>
-    <div class="window">
-        <div class="title-bar">
-            <span>Контакты</span>
-            <span>✕</span>
-        </div>
-        <div class="content">
-            <p>© 2026 Lumina Corporation. Все права защищены.</p>
-        </div>
-    </div>
+    <div class="footer">&copy; 2025 Lumina Corporation. Все права защищены.</div>
 </body>
 </html>
