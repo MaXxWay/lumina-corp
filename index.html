@@ -3,89 +3,174 @@
 <head>
     <meta charset="UTF-8">
     <title>Lumina Corporation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         body {
             background-color: #008080;
-            margin: 0;
-            padding: 20px;
-            font-family: "Microsoft Sans Serif", "MS Sans Serif", sans-serif;
-            font-size: 13px;
+            background-image: linear-gradient(45deg, #007070 25%, transparent 25%, transparent 75%, #007070 75%);
+            background-size: 4px 4px;
+            font-family: "Press Start 2P", "Courier New", monospace;
+            font-size: 10px;
             color: #000;
+            padding: 30px;
+            min-height: 100vh;
+        }
+        .desktop {
+            max-width: 900px;
+            margin: 0 auto;
         }
         .window {
             background: #c0c0c0;
             border: 2px solid;
             border-color: #ffffff #808080 #808080 #ffffff;
-            margin-bottom: 16px;
-            padding: 2px;
+            margin-bottom: 18px;
+            box-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
         .title-bar {
-            background: #000080;
+            background: linear-gradient(90deg, #000080, #1084d0);
             color: white;
-            padding: 3px 6px;
-            font-weight: bold;
-            font-size: 13px;
+            padding: 4px 8px;
+            font-size: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-shadow: 1px 1px #000;
+        }
+        .title-bar-buttons {
+            display: flex;
+            gap: 4px;
+        }
+        .title-btn {
+            background: #c0c0c0;
+            border: 2px solid;
+            border-color: #ffffff #808080 #808080 #ffffff;
+            width: 18px;
+            height: 18px;
+            font-size: 10px;
+            text-align: center;
+            line-height: 14px;
+            color: #000;
+            text-shadow: none;
+            cursor: pointer;
         }
         .content {
-            padding: 12px 16px;
+            padding: 14px 18px;
         }
         .btn {
             background: #c0c0c0;
             border: 2px solid;
             border-color: #ffffff #808080 #808080 #ffffff;
-            padding: 6px 18px;
-            font-family: inherit;
-            font-size: 12px;
+            padding: 8px 20px;
+            font-family: "Press Start 2P", "Courier New", monospace;
+            font-size: 8px;
             cursor: pointer;
             margin-right: 8px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
         }
-        .btn:active {
+        .btn:active, .btn.active {
             border-color: #808080 #ffffff #ffffff #808080;
+            background: #a0a0a0;
         }
         h1 {
-            font-size: 16px;
-            color: #000;
-            margin: 0 0 8px 0;
-        }
-        a {
+            font-size: 12px;
+            margin-bottom: 10px;
             color: #000080;
         }
-        .footer {
-            text-align: center;
-            color: #404040;
-            margin-top: 20px;
-            font-size: 11px;
+        h2 {
+            font-size: 10px;
+            margin-bottom: 8px;
+            color: #000080;
         }
+        ul { list-style: square; padding-left: 20px; }
+        li { margin-bottom: 4px; }
+        .separator {
+            border: none;
+            border-top: 1px solid #808080;
+            margin: 10px 0;
+        }
+        .status-bar {
+            background: #c0c0c0;
+            border-top: 2px solid #808080;
+            padding: 4px 8px;
+            font-size: 9px;
+        }
+        .logo-icon {
+            float: left;
+            margin-right: 10px;
+            font-size: 32px;
+        }
+        .highlight { color: #000080; font-weight: bold; }
     </style>
 </head>
 <body>
-    <div class="window">
-        <div class="title-bar">Lumina Corporation</div>
-        <div class="content">
-            <h1>Добро пожаловать в Lumina Corporation</h1>
-            <p>Мы создаём Lumina OS — лёгкую, быструю и безопасную операционную систему.</p>
-            <button class="btn">Скачать Lumina OS</button>
-            <button class="btn">О системе</button>
-            <button class="btn">Контакты</button>
+    <div class="desktop">
+        <!-- Главное окно -->
+        <div class="window">
+            <div class="title-bar">
+                <span>📁 Lumina Corporation</span>
+                <div class="title-bar-buttons">
+                    <span class="title-btn">_</span>
+                    <span class="title-btn">□</span>
+                    <span class="title-btn">✕</span>
+                </div>
+            </div>
+            <div class="content">
+                <h1>Добро пожаловать в Lumina Corporation</h1>
+                <p>Мы создаём <span class="highlight">Lumina OS</span> — лёгкую, быструю и безопасную операционную систему нового поколения.</p>
+                <hr class="separator">
+                <button class="btn">💾 Скачать Lumina OS</button>
+                <button class="btn">📋 О системе</button>
+                <button class="btn">📧 Контакты</button>
+            </div>
+            <div class="status-bar">Готово | Lumina Corporation © 2025</div>
+        </div>
+
+        <!-- О системе -->
+        <div class="window">
+            <div class="title-bar">
+                <span>🖥️ О Lumina OS</span>
+                <div class="title-bar-buttons">
+                    <span class="title-btn">_</span>
+                    <span class="title-btn">□</span>
+                    <span class="title-btn">✕</span>
+                </div>
+            </div>
+            <div class="content">
+                <h2>Что такое Lumina OS?</h2>
+                <ul>
+                    <li>Современная ОС на базе Linux</li>
+                    <li>Собственный браузер Lumina Browser</li>
+                    <li>Умный обход блокировок</li>
+                    <li>Дизайн Liquid Glass</li>
+                    <li>Работает на Pentium 4 с 512 МБ ОЗУ</li>
+                    <li>Полностью на русском языке</li>
+                </ul>
+            </div>
+            <div class="status-bar">Системные требования: Pentium 4, 512MB RAM, 10GB HDD</div>
+        </div>
+
+        <!-- Установка -->
+        <div class="window">
+            <div class="title-bar">
+                <span>💿 Установка</span>
+                <div class="title-bar-buttons">
+                    <span class="title-btn">_</span>
+                    <span class="title-btn">□</span>
+                    <span class="title-btn">✕</span>
+                </div>
+            </div>
+            <div class="content">
+                <p>ISO-образ Lumina OS 1.0 готовится к выпуску.</p>
+                <p>Следите за обновлениями!</p>
+            </div>
+            <div class="status-bar">Версия: 1.0 | Статус: в разработке</div>
         </div>
     </div>
-    <div class="window">
-        <div class="title-bar">О Lumina OS</div>
-        <div class="content">
-            <p>Lumina OS — это современная ОС на базе Linux с уникальным дизайном Liquid Glass.</p>
-            <p>• Собственный браузер Lumina Browser</p>
-            <p>• Умный обход блокировок</p>
-            <p>• Работает даже на Pentium 4 с 512 МБ ОЗУ</p>
-            <p>• Полностью на русском языке</p>
-        </div>
-    </div>
-    <div class="window">
-        <div class="title-bar">Скачать</div>
-        <div class="content">
-            <p>ISO-образ Lumina OS 1.0 будет доступен для скачивания.</p>
-            <p>Требования: Pentium 4, 512 МБ ОЗУ, 10 ГБ на диске.</p>
-        </div>
-    </div>
-    <div class="footer">&copy; 2025 Lumina Corporation. Все права защищены.</div>
 </body>
 </html>
