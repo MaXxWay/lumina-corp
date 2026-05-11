@@ -12,75 +12,42 @@
             background-image: linear-gradient(45deg, #007070 25%, transparent 25%, transparent 75%, #007070 75%);
             background-size: 4px 4px;
             font-family: "Press Start 2P", "Courier New", monospace;
-            font-size: 10px;
-            color: #000;
-            min-height: 100vh;
-            overflow: hidden;
+            font-size: 10px; color: #000; min-height: 100vh;
+            display: flex; align-items: center; justify-content: center;
+            padding: 20px;
         }
-        .overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.7); z-index: 99; }
-        .overlay.active { display: block; }
-        .rickroll {
-            display: none;
-            position: fixed;
-            top: 50%; left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 100;
-            text-align: center;
-        }
-        .rickroll.active { display: block; }
-        .rickroll-text { color: white; font-size: 16px; margin-top: 10px; }
         .window {
             background: #c0c0c0;
             border: 2px solid;
             border-color: #ffffff #808080 #808080 #ffffff;
             box-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            position: absolute;
-            top: 50%; left: 50%;
-            transform: translate(-50%, -50%);
             width: 700px;
             max-width: 95vw;
-            z-index: 10;
         }
         .title-bar {
             background: linear-gradient(90deg, #000080, #1084d0);
-            color: white;
-            padding: 8px 12px;
-            font-size: 12px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            color: white; padding: 8px 12px; font-size: 12px;
+            display: flex; justify-content: space-between; align-items: center;
             text-shadow: 1px 1px #000;
         }
         .title-btn {
-            background: #c0c0c0;
-            border: 2px solid;
+            background: #c0c0c0; border: 2px solid;
             border-color: #ffffff #808080 #808080 #ffffff;
-            width: 24px;
-            height: 24px;
-            font-size: 12px;
-            text-align: center;
-            line-height: 20px;
-            cursor: pointer;
+            width: 24px; height: 24px; font-size: 12px; text-align: center;
+            line-height: 20px; cursor: pointer;
         }
         .title-btn:hover { background: #d0d0d0; }
         .title-btn:active { border-color: #808080 #ffffff #ffffff #808080; }
         .content { padding: 20px 24px; }
         p { line-height: 1.8; margin-bottom: 12px; }
         .btn {
-            background: #c0c0c0;
-            border: 2px solid;
+            background: #c0c0c0; border: 2px solid;
             border-color: #ffffff #808080 #808080 #ffffff;
             padding: 12px 24px;
             font-family: "Press Start 2P", "Courier New", monospace;
-            font-size: 8px;
-            cursor: pointer;
-            margin: 6px;
-            text-transform: uppercase;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            text-decoration: none;
-            color: #000;
+            font-size: 8px; cursor: pointer; margin: 6px;
+            text-transform: uppercase; display: inline-flex;
+            align-items: center; gap: 10px; text-decoration: none; color: #000;
         }
         .btn:hover { background: #d0d0d0; }
         .btn:active { border-color: #808080 #ffffff #ffffff #808080; }
@@ -91,10 +58,9 @@
         .highlight { color: #000080; font-weight: bold; }
         .products { display: flex; gap: 20px; margin-top: 16px; flex-wrap: wrap; }
         .product-card {
-            background: #d4d0c8;
-            border: 2px solid;
+            background: #d4d0c8; border: 2px solid;
             border-color: #ffffff #808080 #808080 #ffffff;
-            padding: 20px; flex: 1; min-width: 250px; text-align: center;
+            padding: 20px; flex: 1; min-width: 220px; text-align: center;
         }
         @media (max-width: 600px) {
             .window { width: 95vw; }
@@ -102,33 +68,31 @@
             .products { flex-direction: column; }
             .product-card { min-width: auto; }
             .btn { padding: 10px 16px; font-size: 7px; margin: 4px; }
-            h1 { font-size: 12px; }
-            h2 { font-size: 10px; }
+            h1 { font-size: 12px; } h2 { font-size: 10px; }
         }
     </style>
 </head>
 <body>
-    <div class="window" id="mainWindow">
+    <div class="window">
         <div class="title-bar">
             <span>Lumina Corporation</span>
-            <span class="title-btn" onclick="closeWindow()">✕</span>
+            <span class="title-btn">✕</span>
         </div>
         <div class="content">
             <h1>Lumina Corporation</h1>
             <p><span class="highlight">Основана в марте 2026 года.</span></p>
-            <p>Мы создаём программное обеспечение, которое работает на любом железе — от Pentium 4 до современных систем.</p>
-            <p>Наши главные продукты — <span class="highlight">Lumina OS</span> и <span class="highlight">Lumina Messenger</span>.</p>
+            <p>Мы создаём программное обеспечение для любых устройств — от Pentium 4 до современных систем.</p>
             <hr>
             <h2>Наши продукты</h2>
             <div class="products">
                 <div class="product-card">
                     <p>Lumina OS</p>
-                    <p>Лёгкая и быстрая операционная система</p>
+                    <p>Лёгкая и быстрая ОС</p>
                     <a href="os.html" class="btn">Подробнее</a>
                 </div>
                 <div class="product-card">
                     <p>Lumina Messenger</p>
-                    <p>Быстрый и удобный мессенджер</p>
+                    <p>Быстрый мессенджер</p>
                     <a href="messenger-info.html" class="btn">О мессенджере</a>
                     <a href="https://project-pha93.vercel.app/" class="btn">Открыть</a>
                 </div>
@@ -136,28 +100,5 @@
         </div>
         <div class="status-bar">Lumina Corporation © 2025-2026</div>
     </div>
-
-    <div class="overlay" id="overlay"></div>
-    <div class="rickroll" id="rickroll">
-        <iframe width="640" height="360" src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&loop=1&playlist=dQw4w9WgXcQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        <div class="rickroll-text">Never Gonna Give You Up — Rick Astley</div>
-    </div>
-
-    <script>
-        let closed = false;
-        function closeWindow() {
-            if (closed) return;
-            closed = true;
-            document.getElementById('mainWindow').style.display = 'none';
-            document.getElementById('overlay').classList.add('active');
-            document.getElementById('rickroll').classList.add('active');
-        }
-        document.getElementById('overlay').addEventListener('click', function() {
-            document.getElementById('overlay').classList.remove('active');
-            document.getElementById('rickroll').classList.remove('active');
-            document.getElementById('mainWindow').style.display = 'block';
-            closed = false;
-        });
-    </script>
 </body>
 </html>
